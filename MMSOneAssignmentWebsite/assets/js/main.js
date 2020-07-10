@@ -10,7 +10,7 @@ var initialContext = initialCanvas.getContext('2d');
 //object of the grid size textbox
 var gridSize = document.getElementById('txt_gridSize');
 
-//object of the generations count textbox
+//object of the number of generations textbox
 var genCount = document.getElementById('txt_generationCount');
 
 //object of the initial grid holder (DIV)
@@ -59,7 +59,7 @@ document.getElementById('btn_drawGrid').addEventListener('click', function (evt)
 
 // add event listner to "Solve" button
 document.getElementById('btn_solve').addEventListener('click', function (evt) {
-    //check if generations count is not empty
+    //check if number of generations is not empty
     if (genCount.value !== "") {
         //define the html string that will be injected to the solution holder (DIV)
         var htmlVal = "";
@@ -75,7 +75,7 @@ document.getElementById('btn_solve').addEventListener('click', function (evt) {
         gol.Solve();
         //save the game of life results to a new object
         var results = gol.GetResultsArray();
-        //loop on each generation based on Generation Count textbox value
+        //loop on each generation based on number of Generations textbox value
         for (i = 1; i <= genCount.value; i++) {
             //define the injected html as string
             htmlVal += "<div class='row'><div class='col-md-12'><hr /></div>"
@@ -87,8 +87,8 @@ document.getElementById('btn_solve').addEventListener('click', function (evt) {
         }
         //inject the html into the solution holder (DIV)
         //loop on each generation (starting from generation 1, where generation 0 is the initial grid)_
-        //based on Generation Count textbox value.It can be done on the previous loop, but separated to be more clear
-        //the generations count (include generation 0) is the same length as the first dimension in the results array
+        //based on number of Generation textbox value.It can be done on the previous loop, but separated to be more clear
+        //the number of Generation (include generation 0) is the same length as the first dimension in the results array
         solutionHolder.innerHTML = htmlVal;
         for (i = 1; i <= genCount.value; i++) {
             //define a temporary canvas which has the id of the generation (similar to the one defined in the previous loop)
@@ -120,7 +120,7 @@ document.getElementById('btn_solve').addEventListener('click', function (evt) {
         window.scroll(0, 450);
     }
     else {
-        alert("Please specifiy the Generations Count");
+        alert("Please specifiy the Number of Generations");
     }
 }, false);
 
