@@ -134,11 +134,11 @@ function onCanvasClick(evt) {
     //check if the selected cell is has been selected before, by comparing it is location with the indicies in the sellectedCells array
     if (isItemInArray(selectedCells, [Math.round(y), Math.round(x)])) {
         //unfill the selected cell and remove it from the selectedCells array
-        unfillSquare(initialContext, mousePos.x, mousePos.y)
+        unfillSquare(initialContext, mousePos.x, mousePos.y);
         selectedCells = removeFromArray(selectedCells, [Math.round(y), Math.round(x)]);
     } else {
         //fill the selected cell and add it to the selectedCells array
-        fillSquare(initialContext, mousePos.x, mousePos.y)
+        fillSquare(initialContext, mousePos.x, mousePos.y);
         selectedCells.push([Math.round(y), Math.round(x)]);
     }
 }
@@ -195,6 +195,6 @@ function isItemInArray(array, item) {
 //remove item from  2d array by matching the row and the column index
 function removeFromArray(array, item) {
     return array.filter(function (items) {
-        return items[0] !== item[0] && items[1] !== item[1];
+        return items[0] !== item[0] || items[1] !== item[1];
     });
 }
