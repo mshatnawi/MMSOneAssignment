@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="Mohamad Shatnawi" />
+    <title>MMSOne Assignment: Game of Life</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/vendors/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Game of Life</a>
+    </nav>
+    <div class="container-fluid" style="margin-top:15px;">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Grid Size</label>
+                    <input type="number" max="1000" min="1" value="100" id="txt_gridSize" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <button id="btn_drawGrid" class="btn btn-block btn-primary">Draw Grid</button>
+                </div>
+            </div>
+            <div class="col-12" id="div_drawGrid" style="display:none;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-info">
+                            Click on the desired cells to select or deselect them, then choose the number of generation, and click on "Solve".
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center" style="overflow: auto; max-height:400px">
+                        <canvas id="cnv_initial" width="10001" height="10001"></canvas>
+                    </div>
+                    <div class="col-md-12">
+                        <hr />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Number of Generations</label>
+                            <input type="number" max="1000" min="1" value="5" id="txt_generationCount" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button id="btn_solve" class="btn btn-block btn-primary">Solve</button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12" id="div_solution" style="display:none;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/assets/vendors/js/jquery-slim.min.js"><\/script>')</script>
+    <script src="/assets/vendors/js/popper.min.js"></script>
+    <script src="/assets/vendors/js/bootstrap.min.js"></script>
+    <script src="/assets/vendors/js/holder.min.js"></script>
+    <script src="/assets/js/GameOfLife.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
