@@ -113,6 +113,8 @@ document.getElementById('btn_solve').addEventListener('click', function (evt) {
     }
     //show the solution holder object (DIV)
     solutionHolder.style.display = "";
+    alert("Solved!");
+    window.scroll(0, 450);
 }, false);
 
 //create onCanvasClick function, to color the selected cell in the initial canvas
